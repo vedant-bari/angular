@@ -8,23 +8,28 @@ import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { HeroesComponent }      from './heroes/heroes.component';
 import { MessagesComponent }    from './messages/messages.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule }     from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService }  from './in-memory-data.service';
+import { SignupComponent } from './signup/signup.component';
+
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule,
+    // HttpClientInMemoryWebApiModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-)
+//     HttpClientInMemoryWebApiModule.forRoot(
+//       InMemoryDataService, { dataEncapsulation: false }
+// )
 
   ],
   declarations: [
@@ -32,7 +37,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
     DashboardComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    SignupComponent
   ],
   bootstrap: [ AppComponent ]
 })
