@@ -66,7 +66,7 @@ export class SignupService {
         // 'Authorization': 'my-auth-token'
       })
     };
-    const url = `${this.heroesUrl}/api/register`;
+    const url = `https://madmax40.pythonanywhere.com/api/v1/user/users/`;
     console.log("service", url)
     return this.http.post(url, user, httpOptions)
     .subscribe(response => {
