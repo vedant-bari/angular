@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MessageService } from './message.service';
 import { BehaviorSubject, Observable } from 'rxjs';
-
+import { map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './hero';
 @Injectable({
@@ -21,8 +21,24 @@ export class LoginService {
     return this.currentUserSubject.value;
   }
 
+  // login(email, password) {
+  //   return this.http.post<any>(`http://127.0.0.1:8000/rest-auth/login/`, { email, password })
+  //     .subscribe(response => {
+  //       console.log(response);
+  //       return response;
+  //     }, err => {
+  //       throw err;
+  //     });
+  // }
+
   login(email, password) {
     return this.http.post<any>(`http://127.0.0.1:8000/rest-auth/login/`, { email, password })
+    .pipe(map(user => {
+               // store user details and jwt token in local storage to keep user logged in between page refreshes
+               localStorage.setItem('currentUser', JSON.stringify(user));
+               this.currentUserSubject.next(user);
+               return user;
+           }))
       .subscribe(response => {
         console.log(response);
         return response;

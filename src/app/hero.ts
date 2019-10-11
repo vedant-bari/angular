@@ -3,11 +3,11 @@ export class Hero {
   name: string;
 }
 
-export class User {
-    "email": string;
-    "password": string;
-}
-
+// export class User {
+//     "email": string;
+//     "password": string;
+// }
+//
 
 // userForm = new FormGroup({
 //      email: new FormControl(),
@@ -18,7 +18,7 @@ export class User {
     // id: number;
     email: string;
     password1: string;
-    password1: string;
+    password2: string;
     first_name: string;
     last_name: string;
 }
