@@ -9,8 +9,8 @@ import { User } from './hero';
 })
 export class LoginService {
 
-  private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
+  private currentUserSubject: BehaviorSubject<any>;
+  public currentUser: Observable<any>;
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
@@ -33,18 +33,18 @@ export class LoginService {
 
   login(email, password) {
     return this.http.post<any>(`http://127.0.0.1:8000/rest-auth/login/`, { email, password })
-    .pipe(map(user => {
-               // store user details and jwt token in local storage to keep user logged in between page refreshes
-               localStorage.setItem('currentUser', JSON.stringify(user));
-               this.currentUserSubject.next(user);
-               return user;
-           }))
-      .subscribe(response => {
-        console.log(response);
-        return response;
-      }, err => {
-        throw err;
-      });
+    // .pipe(map(user => {
+    //            // store user details and jwt token in local storage to keep user logged in between page refreshes
+    //            localStorage.setItem('currentUser', JSON.stringify(user));
+    //            this.currentUserSubject.next(user);
+    //            return user;
+    //        }))
+    //   .subscribe(response => {
+    //     console.log(response);
+    //     return response;
+    //   }, err => {
+    //     throw err;
+    //   });
   }
 
   logout() {
