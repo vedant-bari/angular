@@ -13,11 +13,12 @@ export class User {
 //      email: new FormControl(),
 //      password : new FormControl('20')
 // });
-// 
-// export class User {
-//     id: number;
-//     username: string;
-//     password: string;
-//     firstName: string;
-//     lastName: string;
-// }
+//
+export class User {
+    // id: number;
+    email: string;
+    password1: string;
+    password1: string;
+    first_name: string;
+    last_name: string;
+}

@@ -66,7 +66,7 @@ export class SignupService {
         // 'Authorization': 'my-auth-token'
       })
     };
-    const url = `http://127.0.0.1:8000/api/v1/user/users/`;
+    const url = `http://127.0.0.1:8000/rest-auth/registration/`;
     console.log("service", url)
     return this.http.post(url, user, httpOptions)
     .subscribe(response => {
