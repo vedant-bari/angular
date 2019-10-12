@@ -18,7 +18,8 @@ import { HttpClientModule , HTTP_INTERCEPTORS }    from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
-import { ErrorInterceptor } from './helpers/error.interceptor'
+import { ErrorInterceptor } from './helpers/error.interceptor';
+import { AlertComponent } from './alert/alert.component'
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import { ErrorInterceptor } from './helpers/error.interceptor'
     HeroDetailComponent,
     MessagesComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    AlertComponent
   ],
   // providers: [
   //       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
