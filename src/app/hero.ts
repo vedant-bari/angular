@@ -31,3 +31,13 @@ export class UserToken{
   token: Token;
   user : User;
 }
+
+export class Todo
+{
+            "id": string;
+            "created_date": any;
+            "modified_date": any;
+            "Title":string;
+            "text": string;
+            "created_by": string;
+        }

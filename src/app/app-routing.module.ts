@@ -6,6 +6,7 @@ import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { SignupComponent }  from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { TodoComponent } from './todo/todo.component';
 import { AuthGuard } from './helpers/auth.guard';
 const routes: Routes = [
 
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'heroes', component: HeroesComponent, canActivate:
   [AuthGuard]},
   { path: 'signup', component: SignupComponent},
-    { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'todo', component: TodoComponent},
 ];
 
 @NgModule({

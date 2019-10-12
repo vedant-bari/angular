@@ -1,0 +1,37 @@
+<!-- <p>todo works!</p>
+<h2>Login</h2>
+<form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+      <label>Title</label>
+      <input type="text" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+      <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+          <div *ngIf="f.title.errors.required">title is required</div>
+          <div *ngIf="f.title.errors.title">title must be a valid title</div>
+      </div>
+  </div>
+    <div class="form-group">
+        <label >Text to Save</label>
+        <input type="text" formControlName="todo_text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.todo_text.errors }" />
+        <div *ngIf="submitted && f.todo_text.errors" class="invalid-feedback">
+            <div *ngIf="f.todo_text.errors.required">todo_text is required</div>
+        </div>
+    </div>
+
+</form> -->
+
+
+<h2>My Todo</h2>
+<ul class="heroes">
+  <li *ngFor="let i of todo">
+      <span>{{i.id}}  </span>
+      <span> {{ i.Title }} </span>
+      <span> {{ i.created_by }} </span>
+      <span> {{ i.created_date }} </span>
+      <span> {{ i.updated_date }} </span>
+      <span> {{ i.text }} </span>
+
+    <!-- <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a> -->
+  </li>
+</ul>

@@ -19,7 +19,8 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
-import { AlertComponent } from './alert/alert.component'
+import { AlertComponent } from './alert/alert.component';
+import { TodoComponent } from './todo/todo.component'
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { AlertComponent } from './alert/alert.component'
     MessagesComponent,
     SignupComponent,
     LoginComponent,
-    AlertComponent
+    AlertComponent,
+    TodoComponent
   ],
   // providers: [
   //       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
