@@ -22,3 +22,12 @@ export class User {
     first_name: string;
     last_name: string;
 }
+
+export class Token{
+  token : string;
+}
+
+export class UserToken{
+  token: Token;
+  user : User;
+}

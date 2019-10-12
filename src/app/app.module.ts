@@ -42,6 +42,12 @@ import { LoginComponent } from './login/login.component';
     SignupComponent,
     LoginComponent
   ],
+  // providers: [
+  //       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  //       { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  //
+  //
+  //   ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
