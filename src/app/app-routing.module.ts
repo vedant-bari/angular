@@ -6,12 +6,15 @@ import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { SignupComponent }  from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
-
+import { AuthGuard } from './helpers/auth.guard';
 const routes: Routes = [
-  { path: '', redirectTo: '/heroes', pathMatch: 'full' },
+
+  { path: '', redirectTo: '/heroes', pathMatch: 'full' , canActivate:
+  [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
-  { path: 'heroes', component: HeroesComponent },
+  { path: 'heroes', component: HeroesComponent, canActivate:
+  [AuthGuard]},
   { path: 'signup', component: SignupComponent},
     { path: 'login', component: LoginComponent}
 ];

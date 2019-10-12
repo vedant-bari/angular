@@ -11,13 +11,14 @@ import { MessagesComponent }    from './messages/messages.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule }     from './app-routing.module';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule , HTTP_INTERCEPTORS }    from '@angular/common/http';
 
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
-
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptor'
 
 @NgModule({
   imports: [
@@ -32,6 +33,13 @@ import { LoginComponent } from './login/login.component';
 //       InMemoryDataService, { dataEncapsulation: false }
 // )
 
+  ],
+  providers: [
+      { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+      { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+      // provider used to create fake backend
+      //fakeBackendProvider
   ],
   declarations: [
     AppComponent,
