@@ -23,15 +23,24 @@
 <h2>My Todo</h2>
 <ul class="heroes">
   <li *ngFor="let i of todo">
-      <span>{{i.id}}  </span>
-      <span> {{ i.Title }} </span>
-      <span> {{ i.created_by }} </span>
-      <span> {{ i.created_date }} </span>
-      <span> {{ i.updated_date }} </span>
-      <span> {{ i.text }} </span>
+    <span>{{i.id}} </span>
+    <span> {{ i.Title }} </span>
+    <span> {{ i.created_by }} </span>
+    <span> {{ i.created_date }} </span>
+    <span> {{ i.updated_date }} </span>
+    <span> {{ i.text }} </span>
 
     <!-- <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a> -->
   </li>
+  <p *ngIf="next">Show this only if "next" is true</p>
+  <button *ngIf="next" class="btn btn-primary">
+    <span class="spinner-border spinner-border-sm mr-1" (click)="onPageChanged(next)"> next</span>
+  </button>
+  <p *ngIf="previous">Show this only if "previous" is true</p>
+  <button *ngIf="previous" class="btn btn-primary">
+    <span class="spinner-border spinner-border-sm mr-1" (click)="onPageChanged(previous)"> previous</span>
+  </button>
+  <p *ngIf="count">Show this only if "count" is true {{ count }}</p>
 </ul>
